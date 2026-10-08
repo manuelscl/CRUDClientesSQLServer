@@ -78,7 +78,6 @@
             txtNombre.Location = new Point(104, 60);
             txtNombre.MaxLength = 60;
             txtNombre.Name = "txtNombre";
-            txtNombre.ReadOnly = true;
             txtNombre.Size = new Size(536, 25);
             txtNombre.TabIndex = 3;
             txtNombre.TabStop = false;
@@ -97,7 +96,6 @@
             txtApellido.Location = new Point(104, 104);
             txtApellido.MaxLength = 60;
             txtApellido.Name = "txtApellido";
-            txtApellido.ReadOnly = true;
             txtApellido.Size = new Size(536, 25);
             txtApellido.TabIndex = 5;
             txtApellido.TabStop = false;
@@ -117,7 +115,6 @@
             txtCorreo.Location = new Point(104, 198);
             txtCorreo.MaxLength = 120;
             txtCorreo.Name = "txtCorreo";
-            txtCorreo.ReadOnly = true;
             txtCorreo.Size = new Size(536, 25);
             txtCorreo.TabIndex = 9;
             txtCorreo.TabStop = false;
@@ -137,7 +134,6 @@
             txtTelefono.Location = new Point(104, 148);
             txtTelefono.MaxLength = 20;
             txtTelefono.Name = "txtTelefono";
-            txtTelefono.ReadOnly = true;
             txtTelefono.Size = new Size(536, 25);
             txtTelefono.TabIndex = 7;
             txtTelefono.TabStop = false;
@@ -161,6 +157,7 @@
             btnNuevo.TabIndex = 10;
             btnNuevo.Text = "Nuevo";
             btnNuevo.UseVisualStyleBackColor = false;
+            btnNuevo.Click += btnNuevo_Click;
             // 
             // btnGuardar
             // 
@@ -172,6 +169,7 @@
             btnGuardar.TabIndex = 11;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnActualizar
             // 
@@ -184,6 +182,7 @@
             btnActualizar.TabIndex = 12;
             btnActualizar.Text = "Actualizar";
             btnActualizar.UseVisualStyleBackColor = false;
+            btnActualizar.Click += btnActualizar_Click;
             // 
             // btnEliminar
             // 
@@ -196,6 +195,7 @@
             btnEliminar.TabIndex = 13;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnCancelar
             // 
@@ -208,9 +208,11 @@
             btnCancelar.TabIndex = 14;
             btnCancelar.Text = "Cancelar Carga";
             btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // dgvClientes
             // 
+            dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvClientes.Location = new Point(23, 59);
             dgvClientes.Name = "dgvClientes";
@@ -219,6 +221,7 @@
             dgvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvClientes.Size = new Size(780, 205);
             dgvClientes.TabIndex = 15;
+            dgvClientes.SelectionChanged += dgvClientes_SelectionChanged;
             // 
             // progressCarga
             // 
@@ -307,6 +310,7 @@
             Name = "FrmClientes";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Gestión de Clientes";
+            Load += FrmClientes_Load;
             ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
             grpDatosCliente.ResumeLayout(false);
             grpDatosCliente.PerformLayout();
